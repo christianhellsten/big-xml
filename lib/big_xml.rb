@@ -6,17 +6,17 @@ module BigXML
   # Select portions of an XML file.
   # 
   # options - A hash containing configuration options:
-  #   input_file - The path of the input file (XML)
+  #   input - The path of the input file (XML)
   #   paths - The paths of the elements you want to select, e.g. /groups/idiots/@id=1
   #   outer_xml - (optional) Include outer XML or not?
-  #   output_file - (optional) The path of the output file.
+  #   output - (optional) The path of the output file.
   #   attributes_in_path - (optional) Default false. Setting this to true will include attributes in the node path, e.g. /groups/@id=1. instead of just /groups
   #
   def self.grep(options = {})
     paths = [options.fetch(:paths)].flatten
-    input_file = options.fetch(:input_file)
+    input_file = options.fetch(:input)
     outer_xml = options.fetch(:outer_xml) { true }
-    output_file = options[:output_file]
+    output_file = options[:output]
     attributes_in_path = options.fetch(:attributes_in_path) { false }
     out = File.open(output_file, 'w') if output_file
     xml = Parser.new(input_file)

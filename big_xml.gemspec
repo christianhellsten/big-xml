@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency("nokogiri")
 
   gem.add_development_dependency("pry")
-  gem.add_development_dependency("awesome_print")
+  #gem.add_development_dependency("awesome_print")
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

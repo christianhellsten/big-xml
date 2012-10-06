@@ -54,7 +54,7 @@ Count elements having a specific path and value:
 
     books = 0
     BigXML.grep(
-      input_file: 'test/fixtures/big.xml',
+      input: 'test/fixtures/big.xml',
       paths: ['/catalog/book/@id=bk108/price'],
       outer_xml: false, # We're only interested in the contents of the
 tag

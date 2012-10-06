@@ -5,8 +5,8 @@ require 'pry'
 class TestBigXML < MiniTest::Unit::TestCase
   def test_grep_with_output_file
     BigXML.grep(
-      input_file: 'test/fixtures/big.xml',
-      output_file: '/tmp/small.xml',
+      input: 'test/fixtures/big.xml',
+      output: '/tmp/small.xml',
       paths: ['/catalog/book'],
       attributes_in_path: true
     )
@@ -14,7 +14,7 @@ class TestBigXML < MiniTest::Unit::TestCase
   def test_grep_with_code
     books = 0
     BigXML.grep(
-      input_file: 'test/fixtures/big.xml',
+      input: 'test/fixtures/big.xml',
       paths: ['/catalog/book'],
       attributes_in_path: false
     ) do |path, xml|
@@ -25,7 +25,7 @@ class TestBigXML < MiniTest::Unit::TestCase
   def test_grep_with_attributes_and_with_code
     books = 0
     BigXML.grep(
-      input_file: 'test/fixtures/big.xml',
+      input: 'test/fixtures/big.xml',
       paths: ['/catalog/book/@id=bk108/price'],
       outer_xml: false,
       attributes_in_path: true
